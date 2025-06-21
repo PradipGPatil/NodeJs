@@ -3,11 +3,12 @@ const router = express.Router();
 
 router.get('/add-products',(req,res,next)=>{
     console.log('in the add-products middleware!!!');
-    return res.send('<form action="/product" method="post"><input type="text" name="message"><button type="submit">submit</button></form>');
+    return res.send('<form action="/admin/add-products" method="post"><input type="text" name="message"><button type="submit">submit</button></form>');
 
 });
 
-router.post('/product',(req,res)=>{
+// here we have same path but different method
+router.post('/add-products',(req,res)=>{
     console.log('body:', req.body);
     res.redirect('/');
 });
